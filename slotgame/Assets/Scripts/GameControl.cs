@@ -8,7 +8,7 @@ public class GameControl : MonoBehaviour {
     public static event Action HandlePulled = delegate { };
 
     [SerializeField]
-    private Text prizeText;
+    private Text winText;
 
     [SerializeField]
     private Rows[] rows;
@@ -16,23 +16,28 @@ public class GameControl : MonoBehaviour {
     [SerializeField]
     private Transform handle;
 
-    private int prizeValue;
+    private int winValue;
 
     private bool resultsChecked = false;
+
+    private string matchingValue = null;
 
     void Update() {
         if (!rows[0].rowStopped || !rows[1].rowStopped || !rows[2].rowStopped)
         {
-            prizeValue = 0;
-            prizeText.enabled = false;
+            winValue = 0;
+            winText.enabled = false;
             resultsChecked = false;
         }
 
         if (rows[0].rowStopped && rows[1].rowStopped && rows[2].rowStopped && !resultsChecked)
         {
             CheckResults();
-            prizeText.enabled = true;
-            prizeText.text = "Prize: " + prizeValue;
+            if (winValue != 0)
+            {
+                winText.enabled = true;
+                winText.text = "WIN\n" + winValue;
+            }
         }
     }
 
@@ -61,123 +66,80 @@ public class GameControl : MonoBehaviour {
 
     private void CheckResults()
     {
-        if (rows[0].stoppedSlot == "Diamond"
-            && rows[1].stoppedSlot == "Diamond"
-            && rows[2].stoppedSlot == "Diamond")
+        if (rows[0].stoppedSlot == rows[1].stoppedSlot 
+            && rows[1].stoppedSlot == rows[2].stoppedSlot)
+        {
+            switch (rows[0].stoppedSlot)
+            {
+                case "Lemon":
+                    winValue = 5000;
+                    break;
 
-            prizeValue = 200;
+                case "Cherry":
+                    winValue = 3000;
+                    break;
 
-        else if (rows[0].stoppedSlot == "Crown"
-            && rows[1].stoppedSlot == "Crown"
-            && rows[2].stoppedSlot == "Crown")
+                case "Seven":
+                    winValue = 1500;
+                    break;
 
-            prizeValue = 400;
+                case "Bar":
+                    winValue = 800;
+                    break;
 
-        else if (rows[0].stoppedSlot == "Melon"
-            && rows[1].stoppedSlot == "Melon"
-            && rows[2].stoppedSlot == "Melon")
+                case "Melon":
+                    winValue = 600;
+                    break;
 
-            prizeValue = 600;
+                case "Crown":
+                    winValue = 400;
+                    break;
 
-        else if (rows[0].stoppedSlot == "Bar"
-            && rows[1].stoppedSlot == "Bar"
-            && rows[2].stoppedSlot == "Bar")
+                case "Diamond":
+                    winValue = 200;
+                    break;
+            }
+        }
 
-            prizeValue = 800;
+        else if (rows[0].stoppedSlot == rows[1].stoppedSlot 
+            || rows[0].stoppedSlot == rows[2].stoppedSlot 
+            || rows[1].stoppedSlot == rows[2].stoppedSlot)
+        {
+            if (rows[0].stoppedSlot == rows[2].stoppedSlot)
+                matchingValue = rows[0].stoppedSlot;
+            else
+                matchingValue = rows[1].stoppedSlot;
 
-        else if (rows[0].stoppedSlot == "Seven"
-            && rows[1].stoppedSlot == "Seven"
-            && rows[2].stoppedSlot == "Seven")
+            switch (matchingValue)
+            {
+                case "Lemon":
+                    winValue = 4000;
+                    break;
 
-            prizeValue = 1500;
+                case "Cherry":
+                    winValue = 2000;
+                    break;
 
-        else if (rows[0].stoppedSlot == "Cherry"
-            && rows[1].stoppedSlot == "Cherry"
-            && rows[2].stoppedSlot == "Cherry")
+                case "Seven":
+                    winValue = 1000;
+                    break;
 
-            prizeValue = 3000;
+                case "Bar":
+                    winValue = 700;
+                    break;
 
-        else if (rows[0].stoppedSlot == "Lemon"
-            && rows[1].stoppedSlot == "Lemon"
-            && rows[2].stoppedSlot == "Lemon")
+                case "Melon":
+                    winValue = 500;
+                    break;
 
-            prizeValue = 5000;
+                case "Crown":
+                    winValue = 300;
+                    break;
 
-        else if (((rows[0].stoppedSlot == rows[1].stoppedSlot)
-            && (rows[0].stoppedSlot == "Diamond"))
-            
-            || ((rows[0].stoppedSlot == rows[2].stoppedSlot)
-            && (rows[0].stoppedSlot == "Diamond"))
-            
-            || ((rows[1].stoppedSlot == rows[2].stoppedSlot)
-            && (rows[1].stoppedSlot == "Diamond")))
-
-            prizeValue = 100;
-
-        else if (((rows[0].stoppedSlot == rows[1].stoppedSlot)
-            && (rows[0].stoppedSlot == "Crown"))
-
-            || ((rows[0].stoppedSlot == rows[2].stoppedSlot)
-            && (rows[0].stoppedSlot == "Crown"))
-
-            || ((rows[1].stoppedSlot == rows[2].stoppedSlot)
-            && (rows[1].stoppedSlot == "Crown")))
-
-            prizeValue = 300;
-
-        else if (((rows[0].stoppedSlot == rows[1].stoppedSlot)
-            && (rows[0].stoppedSlot == "Melon"))
-
-            || ((rows[0].stoppedSlot == rows[2].stoppedSlot)
-            && (rows[0].stoppedSlot == "Melon"))
-
-            || ((rows[1].stoppedSlot == rows[2].stoppedSlot)
-            && (rows[1].stoppedSlot == "Melon")))
-
-            prizeValue = 500;
-
-        else if (((rows[0].stoppedSlot == rows[1].stoppedSlot)
-            && (rows[0].stoppedSlot == "Bar"))
-
-            || ((rows[0].stoppedSlot == rows[2].stoppedSlot)
-            && (rows[0].stoppedSlot == "Bar"))
-
-            || ((rows[1].stoppedSlot == rows[2].stoppedSlot)
-            && (rows[1].stoppedSlot == "Bar")))
-
-            prizeValue = 700;
-
-        else if (((rows[0].stoppedSlot == rows[1].stoppedSlot)
-            && (rows[0].stoppedSlot == "Seven"))
-
-            || ((rows[0].stoppedSlot == rows[2].stoppedSlot)
-            && (rows[0].stoppedSlot == "Seven"))
-
-            || ((rows[1].stoppedSlot == rows[2].stoppedSlot)
-            && (rows[1].stoppedSlot == "Seven")))
-
-            prizeValue = 1000;
-
-        else if (((rows[0].stoppedSlot == rows[1].stoppedSlot)
-            && (rows[0].stoppedSlot == "Cherry"))
-
-            || ((rows[0].stoppedSlot == rows[2].stoppedSlot)
-            && (rows[0].stoppedSlot == "Cherry"))
-
-            || ((rows[1].stoppedSlot == rows[2].stoppedSlot)
-            && (rows[1].stoppedSlot == "Cherry")))
-
-            prizeValue = 2000;
-
-        else if (((rows[0].stoppedSlot == rows[1].stoppedSlot)
-            && (rows[0].stoppedSlot == "Lemon"))
-
-            || ((rows[0].stoppedSlot == rows[2].stoppedSlot)
-            && (rows[0].stoppedSlot == "Lemon"))
-
-            || ((rows[1].stoppedSlot == rows[2].stoppedSlot)
-            && (rows[1].stoppedSlot == "Lemon")))
-
-            prizeValue = 4000;
+                case "Diamond":
+                    winValue = 100;
+                    break;
+            }
+        }
     }
 }
