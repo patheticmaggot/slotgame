@@ -23,7 +23,9 @@ public class BetMax : MonoBehaviour
             if (!isAnimating)
                 StartCoroutine("AnimateButton");
             betOne.currentBet = 10000;
-            UpdateBetText();
+            betOne.resultMultiplier = 50f;
+            betOne.UpdateBetText();
+            betOne.UpdateResults();
         }
     }
 
@@ -40,10 +42,5 @@ public class BetMax : MonoBehaviour
         transform.localPosition = new Vector2(transform.localPosition.x, -0.464f);
 
         isAnimating = false;
-    }
-
-    private void UpdateBetText()
-    {
-        betText.text = "BET\n" + betOne.currentBet;
     }
 }

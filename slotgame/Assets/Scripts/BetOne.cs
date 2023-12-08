@@ -70,7 +70,7 @@ public class BetOne : MonoBehaviour
 
     }
 
-    private void UpdateBetText()
+    public void UpdateBetText()
     {
         betText.text = "BET\n" + currentBet;
     }
