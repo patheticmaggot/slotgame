@@ -11,16 +11,32 @@ public class GameControl : MonoBehaviour {
     private Text winText;
 
     [SerializeField]
+    private Text cashText;
+
+    [SerializeField]
     private Rows[] rows;
 
     [SerializeField]
     private Transform handle;
 
+    [SerializeField]
+    private BetOne betOne;
+
+    [SerializeField]
+    private int currentCash;
+
     private int winValue;
-
     private bool resultsChecked = false;
-
+    private bool isFlashing = false;
     private string matchingValue = null;
+
+
+    void Start ()
+    {
+        winText.enabled = false;
+        UpdateCashText();
+        UpdateWinText();
+    }
 
     void Update() {
         if (!rows[0].rowStopped || !rows[1].rowStopped || !rows[2].rowStopped)
@@ -35,17 +51,28 @@ public class GameControl : MonoBehaviour {
             CheckResults();
             if (winValue != 0)
             {
+                UpdateWinText();
                 winText.enabled = true;
-                winText.text = "WIN\n" + winValue;
+                UpdateCashText();
             }
         }
     }
 
     private void OnMouseDown()
     {
-        if (rows[0].rowStopped && rows[1].rowStopped && rows[2].rowStopped)
+        if (rows[0].rowStopped && rows[1].rowStopped && rows[2].rowStopped && currentCash >= betOne.currentBet)
+        {
             StartCoroutine("PullHandle");
+            PayToSpin();
+        }
+        else if (rows[0].rowStopped && rows[1].rowStopped && rows[2].rowStopped)
+        {
+            if (!isFlashing) 
+                StartCoroutine("FlashCashRed");
+        }
     }
+
+    
 
     private IEnumerator PullHandle()
     {
@@ -64,45 +91,109 @@ public class GameControl : MonoBehaviour {
         }
     }
 
+    private IEnumerator FlashCashRed()
+    {
+        isFlashing = true;
+        float flashDuration = 0.3f;
+        float waitBetweenFlashes = 0.3f;
+
+        for (int i = 0; i < 3; i++)
+        {
+            float elapsed = 0f;
+            Color startColor = HexToColor("E1D696");
+            Color targetColor = HexToColor("FF0000");
+
+            while (elapsed < flashDuration)
+            {
+                cashText.color = Color.Lerp(startColor, targetColor, elapsed / flashDuration);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(waitBetweenFlashes);
+
+            elapsed = 0f;
+
+            while (elapsed < flashDuration)
+            {
+                cashText.color = Color.Lerp(targetColor, startColor, elapsed / flashDuration);
+                elapsed += Time.deltaTime;
+                yield return null;
+            }
+
+            yield return new WaitForSeconds(waitBetweenFlashes);
+        }
+        isFlashing = false;
+    }
+
+    private Color HexToColor(string hex)
+    {
+        Color color = Color.white;
+        ColorUtility.TryParseHtmlString("#" + hex, out color);
+        return color;
+    }
+
+    private void PayToSpin()
+    {
+        currentCash -= betOne.currentBet;
+        UpdateCashText();
+    }
+
+    private void SpinToWin()
+    {
+        currentCash += winValue;
+        UpdateCashText();
+    }
+
+    private void UpdateCashText()
+    {
+        cashText.text = "CASH\n" + currentCash;
+    }
+
+    private void UpdateWinText()
+    {
+        winText.text = "WIN\n" + winValue;
+    }
+
     private void CheckResults()
     {
-        if (rows[0].stoppedSlot == rows[1].stoppedSlot 
+        if (rows[0].stoppedSlot == rows[1].stoppedSlot
             && rows[1].stoppedSlot == rows[2].stoppedSlot)
         {
             switch (rows[0].stoppedSlot)
             {
                 case "Lemon":
-                    winValue = 5000;
+                    winValue = ((int)(betOne.resultsAmounts[1] * betOne.resultMultiplier));
                     break;
 
                 case "Cherry":
-                    winValue = 3000;
+                    winValue = ((int)(betOne.resultsAmounts[3] * betOne.resultMultiplier));
                     break;
 
                 case "Seven":
-                    winValue = 1500;
+                    winValue = ((int)(betOne.resultsAmounts[5] * betOne.resultMultiplier));
                     break;
 
                 case "Bar":
-                    winValue = 800;
+                    winValue = ((int)(betOne.resultsAmounts[7] * betOne.resultMultiplier));
                     break;
 
                 case "Melon":
-                    winValue = 600;
+                    winValue = ((int)(betOne.resultsAmounts[9] * betOne.resultMultiplier));
                     break;
 
                 case "Crown":
-                    winValue = 400;
+                    winValue = ((int)(betOne.resultsAmounts[11] * betOne.resultMultiplier));
                     break;
 
                 case "Diamond":
-                    winValue = 200;
+                    winValue = ((int)(betOne.resultsAmounts[13] * betOne.resultMultiplier));
                     break;
             }
         }
 
-        else if (rows[0].stoppedSlot == rows[1].stoppedSlot 
-            || rows[0].stoppedSlot == rows[2].stoppedSlot 
+        else if (rows[0].stoppedSlot == rows[1].stoppedSlot
+            || rows[0].stoppedSlot == rows[2].stoppedSlot
             || rows[1].stoppedSlot == rows[2].stoppedSlot)
         {
             if (rows[0].stoppedSlot == rows[2].stoppedSlot)
@@ -113,33 +204,38 @@ public class GameControl : MonoBehaviour {
             switch (matchingValue)
             {
                 case "Lemon":
-                    winValue = 4000;
+                    winValue = ((int)(betOne.resultsAmounts[0] * betOne.resultMultiplier));
                     break;
 
                 case "Cherry":
-                    winValue = 2000;
+                    winValue = ((int)(betOne.resultsAmounts[2] * betOne.resultMultiplier));
                     break;
 
                 case "Seven":
-                    winValue = 1000;
+                    winValue = ((int)(betOne.resultsAmounts[4] * betOne.resultMultiplier));
                     break;
 
                 case "Bar":
-                    winValue = 700;
+                    winValue = ((int)(betOne.resultsAmounts[6] * betOne.resultMultiplier));
                     break;
 
                 case "Melon":
-                    winValue = 500;
+                    winValue = ((int)(betOne.resultsAmounts[8] * betOne.resultMultiplier));
                     break;
 
                 case "Crown":
-                    winValue = 300;
+                    winValue = ((int)(betOne.resultsAmounts[10] * betOne.resultMultiplier));
                     break;
 
                 case "Diamond":
-                    winValue = 100;
+                    winValue = ((int)(betOne.resultsAmounts[12] * betOne.resultMultiplier));
                     break;
             }
         }
+        else
+            winValue = 0;
+
+        SpinToWin();
+        resultsChecked = true;
     }
 }
