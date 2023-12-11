@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.XR;
@@ -14,6 +15,9 @@ public class BetOne : MonoBehaviour
 
     [SerializeField]
     public Text[] resultText;
+
+    [SerializeField]
+    private Menu menu;
 
     public int currentBet = 200;
     public float resultMultiplier = 1;
@@ -37,7 +41,7 @@ public class BetOne : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (rows[0].rowStopped && rows[1].rowStopped && rows[2].rowStopped)
+        if (rows[0].rowStopped && rows[1].rowStopped && rows[2].rowStopped && !menu.menuActive)
         {
             if (!isAnimating)
                 StartCoroutine("AnimateButton");
@@ -51,9 +55,7 @@ public class BetOne : MonoBehaviour
         isAnimating = true;
 
         if (transform.localPosition.y == -0.464f)
-        {
             transform.localPosition = new Vector2(transform.localPosition.x, -0.525f);
-        }
 
         yield return new WaitForSeconds(0.1f);
         transform.localPosition = new Vector2(transform.localPosition.x, -0.464f);

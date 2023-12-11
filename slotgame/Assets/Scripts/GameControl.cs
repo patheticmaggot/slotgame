@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEditor;
 
 public class GameControl : MonoBehaviour {
     public static event Action HandlePulled = delegate { };
@@ -22,9 +23,7 @@ public class GameControl : MonoBehaviour {
     [SerializeField]
     private BetOne betOne;
 
-    [SerializeField]
-    private int currentCash;
-
+    public int currentCash;
     private int winValue;
     private bool resultsChecked = false;
     private bool isFlashing = false;
@@ -145,7 +144,7 @@ public class GameControl : MonoBehaviour {
         UpdateCashText();
     }
 
-    private void UpdateCashText()
+    public void UpdateCashText()
     {
         cashText.text = "CASH\n" + currentCash;
     }
