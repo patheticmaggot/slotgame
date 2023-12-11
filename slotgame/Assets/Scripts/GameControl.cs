@@ -23,9 +23,12 @@ public class GameControl : MonoBehaviour {
     [SerializeField]
     private BetOne betOne;
 
+    [SerializeField]
+    private GameObject jackpotLights;
+
     public int currentCash;
     private int winValue;
-    private bool resultsChecked = false;
+    private bool resultsChecked = true;
     private bool isFlashing = false;
     private string matchingValue = null;
 
@@ -87,6 +90,19 @@ public class GameControl : MonoBehaviour {
         {
             handle.Rotate(0f, 0f, -i);
             yield return new WaitForSeconds(0.1f);
+        }
+    }
+
+    private IEnumerator Jackpot()
+    {
+        float waitBetweenFlashes = 0.1f;
+
+        for (int i = 0; i < 50; i++)
+        {
+            jackpotLights.SetActive(false);
+            yield return new WaitForSeconds(waitBetweenFlashes);
+            jackpotLights.SetActive(true);
+            yield return new WaitForSeconds(waitBetweenFlashes);
         }
     }
 
@@ -163,6 +179,7 @@ public class GameControl : MonoBehaviour {
             {
                 case "Lemon":
                     winValue = ((int)(betOne.resultsAmounts[1] * betOne.resultMultiplier));
+                    StartCoroutine("Jackpot");
                     break;
 
                 case "Cherry":
