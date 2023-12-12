@@ -24,13 +24,13 @@ public class BetOne : MonoBehaviour
     private bool isAnimating = false;
 
     public int[] resultsAmounts = {
-        4000, 5000,   // lemon amounts
-        2000, 3000,   // cherry amounts
-        1000, 1500,   // seven amounts
-        700,  800,    // bar amounts
-        500,  600,    // melon amounts
-        300,  400,    // crown amounts
-        100,  200     // diamond amounts
+        1800, 20000,   // lemon amounts
+        1300, 12000,   // cherry amounts
+        800, 4000,   // seven amounts
+        400,  2400,    // bar amounts
+        400,  1600,    // melon amounts
+        200,  800,    // crown amounts
+        200,  800     // diamond amounts
         };
 
     private void Start()

@@ -277,7 +277,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 300
+  m_Text: 
 --- !u!222 &28387308
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -891,7 +891,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 200
+  m_Text: 
 --- !u!222 &105087305
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1187,7 +1187,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 100
+  m_Text: 
 --- !u!222 &134556797
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1636,7 +1636,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2000
+  m_Text: 
 --- !u!222 &333480976
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2239,7 +2239,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 600
+  m_Text: 
 --- !u!222 &467853099
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2318,7 +2318,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 4000
+  m_Text: 
 --- !u!222 &494506331
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3255,7 +3255,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 400
+  m_Text: 
 --- !u!222 &686126990
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3333,7 +3333,7 @@ MonoBehaviour:
   menu: {fileID: 1995911157}
   currentBet: 200
   resultMultiplier: 1
-  resultsAmounts: a00f000088130000d0070000b80b0000e8030000dc050000bc02000020030000f4010000580200002c0100009001000064000000c8000000
+  resultsAmounts: 08070000204e000014050000e02e000020030000a00f000090010000600900009001000040060000c800000020030000c800000020030000
 --- !u!61 &689473260
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3585,7 +3585,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1000
+  m_Text: 
 --- !u!222 &745308573
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3791,7 +3791,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 700
+  m_Text: 
 --- !u!222 &838451598
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4241,7 +4241,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 800
+  m_Text: 
 --- !u!222 &973023029
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4320,7 +4320,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 500
+  m_Text: 
 --- !u!222 &975521493
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4673,7 +4673,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 1500
+  m_Text: 
 --- !u!222 &1022317318
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5527,7 +5527,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 5000
+  m_Text: 
 --- !u!222 &1431415356
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6584,7 +6584,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 3000
+  m_Text: 
 --- !u!222 &1818949013
 CanvasRenderer:
   m_ObjectHideFlags: 0

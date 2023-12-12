@@ -184,6 +184,7 @@ public class GameControl : MonoBehaviour {
 
                 case "Cherry":
                     winValue = ((int)(betOne.resultsAmounts[3] * betOne.resultMultiplier));
+                    StartCoroutine("Jackpot");
                     break;
 
                 case "Seven":
