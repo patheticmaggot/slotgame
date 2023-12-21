@@ -123,13 +123,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ResultsIconsLemons
+      name: crownx3
       rect:
         serializedVersion: 2
-        x: 70
-        y: 1687
-        width: 364
-        height: 251
+        x: 13
+        y: 1853
+        width: 362
+        height: 93
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -137,20 +137,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8d85a0aaf20e23542bc538667f1df3a8
-      internalID: 2086984306
+      spriteID: d54c829f8c4b77545b3269924c0f4443
+      internalID: -1947211092
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ResultsIconsCherries
+      name: crownx2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 1399
-        width: 368
-        height: 255
+        x: 13
+        y: 1748
+        width: 240
+        height: 92
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -158,20 +158,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3efdf2b60723d06499c5d61f89a6d45d
-      internalID: -1639478670
+      spriteID: b4aac258158f73848ac538ce3fe4e99a
+      internalID: 1558852005
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ResultsIconsSevens
+      name: diamondx3
       rect:
         serializedVersion: 2
-        x: 69
-        y: 1118
-        width: 332
-        height: 253
+        x: 13
+        y: 1608
+        width: 395
+        height: 104
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -179,20 +179,83 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bce44cfffc268eb46b58cc1a8e5d46e0
-      internalID: 544843990
+      spriteID: 9d6ae9096c6e4d84e9c250aa42a329e2
+      internalID: -295393151
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ResultsIconsBars
+      name: diamondx2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 891
+        x: 12
+        y: 1474
+        width: 266
+        height: 105
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c4ca0b71cd06ad4a9341745b5b4a4e4
+      internalID: 1904047960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sevenx3
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 1347
+        width: 326
+        height: 112
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e0cfc34639df3841a66339c3f93ca53
+      internalID: 340821531
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sevenx2
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 1222
+        width: 209
+        height: 113
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5d8ea940356f06488c25b069bac05a0
+      internalID: -1012534605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: barx3
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 1134
         width: 401
-        height: 179
+        height: 61
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -200,20 +263,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dcfe46140ada1248accbe186e5ac710
-      internalID: -535742848
+      spriteID: 5ec18351236e7bd4b9c759d6b087fc8f
+      internalID: 820550647
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ResultsIconsMelons
+      name: barx2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 634
+        x: 12
+        y: 1041
+        width: 264
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8bd71470ad3b7b3449999ce1b24550df
+      internalID: -880306019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: melonx3
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 898
         width: 379
-        height: 200
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +305,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 929752f21afae834bb48b85671fbe271
-      internalID: 2077601796
+      spriteID: d1468dd4c48adf94b8cf2088832211aa
+      internalID: 1290201034
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ResultsIconsCrowns
+      name: melonx2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 390
-        width: 365
-        height: 212
+        x: 12
+        y: 794
+        width: 252
+        height: 88
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -242,20 +326,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee6503b1b2f9d0643b41a8cf0e3c3f85
-      internalID: -934694718
+      spriteID: 8d562be6666cb394b83643c193e809ae
+      internalID: -1389190768
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ResultsIconsDiamonds
+      name: lemonx3
       rect:
         serializedVersion: 2
-        x: 71
-        y: 127
-        width: 398
-        height: 227
+        x: 11
+        y: 666
+        width: 364
+        height: 117
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -263,8 +347,71 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e87dd0f99617b6c408dc37e5cda0e268
-      internalID: -2052834837
+      spriteID: 833b152dd79b8704da09a15101141be4
+      internalID: -1851003444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lemonx2
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 537
+        width: 244
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5203f5fd671ff0748a4e051ab3e2b9f9
+      internalID: 1315297692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cherryx3
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 380
+        width: 371
+        height: 120
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d281232e18fc454f8f6bbe274a9db24
+      internalID: 1398405224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cherryx2
+      rect:
+        serializedVersion: 2
+        x: 14
+        y: 230
+        width: 248
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d178a39165107d42b641ec52ae1c177
+      internalID: 877183186
       vertices: []
       indices: 
       edges: []
@@ -280,36 +427,36 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      ResultsIconsBars: -535742848
-      ResultsIconsCherries: -1639478670
-      ResultsIconsCrowns: -934694718
-      ResultsIconsDiamonds: -2052834837
-      ResultsIconsLemons: 2086984306
-      ResultsIconsMelons: 2077601796
-      ResultsIconsSevens: 544843990
       ResultsIcons_1: 1810611963
       ResultsIcons_11: 782809091
-      ResultsIcons_12: 244134505
       ResultsIcons_13: -286898072
       ResultsIcons_14: -2106031251
       ResultsIcons_16: -135604152
-      ResultsIcons_17: 1382730931
       ResultsIcons_18: 506543602
       ResultsIcons_19: -1143161809
       ResultsIcons_2: -1170602632
       ResultsIcons_21: 910588158
-      ResultsIcons_22: 762197657
       ResultsIcons_23: 1058476626
       ResultsIcons_24: -1101580582
       ResultsIcons_26: -1072498107
-      ResultsIcons_27: 878590924
       ResultsIcons_28: -1830931662
-      ResultsIcons_3: 1623418527
       ResultsIcons_4: 834504106
-      ResultsIcons_5: -19323395
-      ResultsIcons_7: -471801538
       ResultsIcons_8: -1765077195
       ResultsIcons_9: -54122878
+      barx2: -880306019
+      barx3: 244134505
+      cherryx2: 877183186
+      cherryx3: 878590924
+      crownx2: 1623418527
+      crownx3: -1947211092
+      diamondx2: 1904047960
+      diamondx3: -19323395
+      lemonx2: 1315297692
+      lemonx3: 762197657
+      melonx2: -1389190768
+      melonx3: 1382730931
+      sevenx2: -1012534605
+      sevenx3: -471801538
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -177,34 +177,34 @@ public class GameControl : MonoBehaviour {
         {
             switch (rows[0].stoppedSlot)
             {
-                case "Lemon":
-                    winValue = ((int)(betOne.resultsAmounts[1] * betOne.resultMultiplier));
+                case "Crown":
+                    winValue = ((int)(betOne.resultsAmounts[0] * betOne.resultMultiplier));
                     StartCoroutine("Jackpot");
                     break;
 
-                case "Cherry":
-                    winValue = ((int)(betOne.resultsAmounts[3] * betOne.resultMultiplier));
+                case "Diamond":
+                    winValue = ((int)(betOne.resultsAmounts[2] * betOne.resultMultiplier));
                     StartCoroutine("Jackpot");
                     break;
 
                 case "Seven":
-                    winValue = ((int)(betOne.resultsAmounts[5] * betOne.resultMultiplier));
+                    winValue = ((int)(betOne.resultsAmounts[4] * betOne.resultMultiplier));
                     break;
 
                 case "Bar":
-                    winValue = ((int)(betOne.resultsAmounts[7] * betOne.resultMultiplier));
+                    winValue = ((int)(betOne.resultsAmounts[6] * betOne.resultMultiplier));
                     break;
 
                 case "Melon":
-                    winValue = ((int)(betOne.resultsAmounts[9] * betOne.resultMultiplier));
+                    winValue = ((int)(betOne.resultsAmounts[8] * betOne.resultMultiplier));
                     break;
 
-                case "Crown":
-                    winValue = ((int)(betOne.resultsAmounts[11] * betOne.resultMultiplier));
+                case "Lemon":
+                    winValue = ((int)(betOne.resultsAmounts[10] * betOne.resultMultiplier));
                     break;
 
-                case "Diamond":
-                    winValue = ((int)(betOne.resultsAmounts[13] * betOne.resultMultiplier));
+                case "Cherry":
+                    winValue = ((int)(betOne.resultsAmounts[12] * betOne.resultMultiplier));
                     break;
             }
         }
@@ -220,32 +220,32 @@ public class GameControl : MonoBehaviour {
 
             switch (matchingValue)
             {
-                case "Lemon":
-                    winValue = ((int)(betOne.resultsAmounts[0] * betOne.resultMultiplier));
-                    break;
-
-                case "Cherry":
-                    winValue = ((int)(betOne.resultsAmounts[2] * betOne.resultMultiplier));
-                    break;
-
-                case "Seven":
-                    winValue = ((int)(betOne.resultsAmounts[4] * betOne.resultMultiplier));
-                    break;
-
-                case "Bar":
-                    winValue = ((int)(betOne.resultsAmounts[6] * betOne.resultMultiplier));
-                    break;
-
-                case "Melon":
-                    winValue = ((int)(betOne.resultsAmounts[8] * betOne.resultMultiplier));
-                    break;
-
                 case "Crown":
-                    winValue = ((int)(betOne.resultsAmounts[10] * betOne.resultMultiplier));
+                    winValue = ((int)(betOne.resultsAmounts[1] * betOne.resultMultiplier));
                     break;
 
                 case "Diamond":
-                    winValue = ((int)(betOne.resultsAmounts[12] * betOne.resultMultiplier));
+                    winValue = ((int)(betOne.resultsAmounts[3] * betOne.resultMultiplier));
+                    break;
+
+                case "Seven":
+                    winValue = ((int)(betOne.resultsAmounts[5] * betOne.resultMultiplier));
+                    break;
+
+                case "Bar":
+                    winValue = ((int)(betOne.resultsAmounts[7] * betOne.resultMultiplier));
+                    break;
+
+                case "Melon":
+                    winValue = ((int)(betOne.resultsAmounts[9] * betOne.resultMultiplier));
+                    break;
+
+                case "Lemon":
+                    winValue = ((int)(betOne.resultsAmounts[11] * betOne.resultMultiplier));
+                    break;
+
+                case "Cherry":
+                    winValue = ((int)(betOne.resultsAmounts[13] * betOne.resultMultiplier));
                     break;
             }
         }

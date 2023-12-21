@@ -23,18 +23,21 @@ public class BetOne : MonoBehaviour
     public float resultMultiplier = 1;
     private bool isAnimating = false;
 
-    public int[] resultsAmounts = {
-        1800, 20000,   // lemon amounts
-        1300, 12000,   // cherry amounts
-        800, 4000,   // seven amounts
-        400,  2400,    // bar amounts
-        400,  1600,    // melon amounts
-        200,  800,    // crown amounts
-        200,  800     // diamond amounts
-        };
+    [HideInInspector]
+    public int[] resultsAmounts;
 
     private void Start()
     {
+        resultsAmounts = new int[]
+        {
+            20000, 1800,   // crown amounts
+            12000, 1300,   // diamond amounts
+            4000, 800,     // seven amounts
+            2400, 400,     // bar amounts
+            1600, 400,     // melon amounts
+            800, 200,      // lemon amounts
+            800, 200       // cherry amounts
+        };
         UpdateBetText();
         UpdateResults();
     }

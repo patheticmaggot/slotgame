@@ -204,7 +204,7 @@ SpriteRenderer:
   m_Size: {x: 0.66833335, y: 0.29833335}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &28387305
@@ -219,7 +219,7 @@ GameObject:
   - component: {fileID: 28387308}
   - component: {fileID: 28387307}
   m_Layer: 5
-  m_Name: crown2Text
+  m_Name: 6.3Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -833,7 +833,7 @@ GameObject:
   - component: {fileID: 105087305}
   - component: {fileID: 105087304}
   m_Layer: 5
-  m_Name: diamond3Text
+  m_Name: 7.2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1129,7 +1129,7 @@ GameObject:
   - component: {fileID: 134556797}
   - component: {fileID: 134556796}
   m_Layer: 5
-  m_Name: diamond2Text
+  m_Name: 7.3Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1578,7 +1578,7 @@ GameObject:
   - component: {fileID: 333480976}
   - component: {fileID: 333480975}
   m_Layer: 5
-  m_Name: cherry2Text
+  m_Name: 2.3Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1860,7 +1860,7 @@ SpriteRenderer:
   m_Size: {x: 0.60833335, y: 0.35333332}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &370327414
@@ -2181,7 +2181,7 @@ GameObject:
   - component: {fileID: 467853099}
   - component: {fileID: 467853098}
   m_Layer: 5
-  m_Name: melon3Text
+  m_Name: 5.2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2260,7 +2260,7 @@ GameObject:
   - component: {fileID: 494506331}
   - component: {fileID: 494506330}
   m_Layer: 5
-  m_Name: lemon2Text
+  m_Name: 1.3Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3197,7 +3197,7 @@ GameObject:
   - component: {fileID: 686126990}
   - component: {fileID: 686126989}
   m_Layer: 5
-  m_Name: crown3Text
+  m_Name: 6.2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3512,7 +3512,7 @@ SpriteRenderer:
   m_Size: {x: 0.55333334, y: 0.42166665}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &745308570
@@ -3527,7 +3527,7 @@ GameObject:
   - component: {fileID: 745308573}
   - component: {fileID: 745308572}
   m_Layer: 5
-  m_Name: seven2Text
+  m_Name: 3.3Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3733,7 +3733,7 @@ GameObject:
   - component: {fileID: 838451598}
   - component: {fileID: 838451597}
   m_Layer: 5
-  m_Name: bar2Text
+  m_Name: 4.3Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4183,7 +4183,7 @@ GameObject:
   - component: {fileID: 973023029}
   - component: {fileID: 973023028}
   m_Layer: 5
-  m_Name: bar3Text
+  m_Name: 4.2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4262,7 +4262,7 @@ GameObject:
   - component: {fileID: 975521493}
   - component: {fileID: 975521492}
   m_Layer: 5
-  m_Name: melon2Text
+  m_Name: 5.3Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4410,7 +4410,7 @@ SpriteRenderer:
   m_Size: {x: 0.61333334, y: 0.425}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &984598790
@@ -4615,7 +4615,7 @@ GameObject:
   - component: {fileID: 1022317318}
   - component: {fileID: 1022317317}
   m_Layer: 5
-  m_Name: seven3Text
+  m_Name: 3.2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5469,7 +5469,7 @@ GameObject:
   - component: {fileID: 1431415356}
   - component: {fileID: 1431415355}
   m_Layer: 5
-  m_Name: lemon3Text
+  m_Name: 1.2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5617,7 +5617,7 @@ SpriteRenderer:
   m_Size: {x: 0.66333336, y: 0.37833333}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1516502222
@@ -6526,7 +6526,7 @@ GameObject:
   - component: {fileID: 1818949013}
   - component: {fileID: 1818949012}
   m_Layer: 5
-  m_Name: cherry3Text
+  m_Name: 2.2Text
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7025,7 +7025,7 @@ SpriteRenderer:
   m_Size: {x: 0.6066667, y: 0.41833332}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1995911153
@@ -7046,7 +7046,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1995911154
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7208,7 +7208,7 @@ SpriteRenderer:
   m_Size: {x: 0.63166666, y: 0.33333334}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &2077292837
