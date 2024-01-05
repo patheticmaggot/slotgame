@@ -15,7 +15,7 @@ public class GameControl : MonoBehaviour {
     private Text cashText;
 
     [SerializeField]
-    private Rows[] rows;
+    private Rows[] wheel;
 
     [SerializeField]
     private Transform handle;
@@ -26,11 +26,15 @@ public class GameControl : MonoBehaviour {
     [SerializeField]
     private GameObject jackpotLights;
 
+    private int row1;
+    private int row2;
+    private int row3;
     public int currentCash;
     private int winValue;
     private bool resultsChecked = true;
     private bool isFlashing = false;
     private string matchingValue = null;
+    List<int> activeWheels = new List<int>();
 
 
     void Start ()
@@ -38,9 +42,11 @@ public class GameControl : MonoBehaviour {
         winText.enabled = false;
         UpdateCashText();
         UpdateWinText();
+        InitializeRows();
     }
 
     void Update() {
+        /*
         if (!rows[0].rowStopped || !rows[1].rowStopped || !rows[2].rowStopped)
         {
             winValue = 0;
@@ -58,10 +64,50 @@ public class GameControl : MonoBehaviour {
                 UpdateCashText();
             }
         }
+        */
+    }
+
+    private int RandomWheel()
+    {
+        int temp;
+        bool notSame = false;
+        do {
+            bool again = false;
+            temp = UnityEngine.Random.Range(1, 8);
+            foreach (int k in activeWheels)
+            {
+                if (k == temp)
+                {
+                    again = true;
+                    break;
+                }
+            }
+            if (!again)
+            {
+                activeWheels.Add(temp);
+                notSame = true;
+            }
+        } while (notSame);
+        return temp;
+    }
+
+    public int UpdateRows(int oldWheel)
+    {
+        int newWheel = RandomWheel();
+        activeWheels.Remove(oldWheel);
+        return newWheel;
+    }
+
+    private void InitializeRows()
+    {
+        row1 = RandomWheel();
+        row2 = RandomWheel();
+        row3 = RandomWheel();
     }
 
     private void OnMouseDown()
     {
+        /*
         if (rows[0].rowStopped && rows[1].rowStopped && rows[2].rowStopped && currentCash >= betOne.currentBet)
         {
             StartCoroutine("PullHandle");
@@ -72,6 +118,7 @@ public class GameControl : MonoBehaviour {
             if (!isFlashing) 
                 StartCoroutine("FlashCashRed");
         }
+        */
     }
 
     
