@@ -9,9 +9,11 @@ public class Rows : MonoBehaviour {
 
     public bool rowStopped;
     public string stoppedSlot;
+    private bool wheelActive;
 
     void Start()
     {
+        wheelActive = false;
         rowStopped = true;
         GameControl.HandlePulled += StartRotating;
     }
@@ -24,6 +26,10 @@ public class Rows : MonoBehaviour {
 
     private IEnumerator Rotate()
     {
+        if (wheelActive)
+        {
+
+        }
         rowStopped = false;
         timeInterval = 0.025f;
 
