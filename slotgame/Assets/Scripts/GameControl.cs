@@ -15,7 +15,7 @@ public class GameControl : MonoBehaviour {
     private Text cashText;
 
     [SerializeField]
-    private Rows[] wheel;
+    private Rows[] rows;
 
     [SerializeField]
     private Transform handle;
@@ -26,15 +26,12 @@ public class GameControl : MonoBehaviour {
     [SerializeField]
     private GameObject jackpotLights;
 
-    private int row1;
-    private int row2;
-    private int row3;
     public int currentCash;
     private int winValue;
     private bool resultsChecked = true;
     private bool isFlashing = false;
     private string matchingValue = null;
-    List<int> activeWheels = new List<int>();
+    List<int> activeRows = new List<int>();
 
 
     void Start ()
@@ -46,15 +43,14 @@ public class GameControl : MonoBehaviour {
     }
 
     void Update() {
-        /*
-        if (!rows[0].rowStopped || !rows[1].rowStopped || !rows[2].rowStopped)
+        if (rows[0].rowSpinning || rows[1].rowSpinning || rows[2].rowSpinning)
         {
             winValue = 0;
             winText.enabled = false;
             resultsChecked = false;
         }
 
-        if (rows[0].rowStopped && rows[1].rowStopped && rows[2].rowStopped && !resultsChecked)
+        if (!rows[0].rowSpinning && !rows[1].rowSpinning && !rows[2].rowSpinning && !resultsChecked)
         {
             CheckResults();
             if (winValue != 0)
@@ -64,19 +60,18 @@ public class GameControl : MonoBehaviour {
                 UpdateCashText();
             }
         }
-        */
     }
 
     private int RandomWheel()
     {
-        int temp;
+        int random;
         bool notSame = false;
         do {
             bool again = false;
-            temp = UnityEngine.Random.Range(1, 8);
-            foreach (int k in activeWheels)
+            random = UnityEngine.Random.Range(1, 8);
+            foreach (int k in activeRows)
             {
-                if (k == temp)
+                if (k == random)
                 {
                     again = true;
                     break;
@@ -84,41 +79,39 @@ public class GameControl : MonoBehaviour {
             }
             if (!again)
             {
-                activeWheels.Add(temp);
+                activeRows.Add(random);
                 notSame = true;
             }
         } while (notSame);
-        return temp;
+        return random;
     }
 
-    public int UpdateRows(int oldWheel)
+    public int UpdateRow(int oldRow)
     {
-        int newWheel = RandomWheel();
-        activeWheels.Remove(oldWheel);
-        return newWheel;
+        int newRow = RandomWheel();
+        activeRows.Remove(oldRow);
+        return newRow;
     }
 
     private void InitializeRows()
     {
-        row1 = RandomWheel();
-        row2 = RandomWheel();
-        row3 = RandomWheel();
+        rows[RandomWheel()].rowActive = true;
+        rows[RandomWheel()].rowActive = true;
+        rows[RandomWheel()].rowActive = true;
     }
 
     private void OnMouseDown()
     {
-        /*
-        if (rows[0].rowStopped && rows[1].rowStopped && rows[2].rowStopped && currentCash >= betOne.currentBet)
+        if (!rows[0].rowSpinning && !rows[1].rowSpinning && !rows[2].rowSpinning && currentCash >= betOne.currentBet)
         {
             StartCoroutine("PullHandle");
             PayToSpin();
         }
-        else if (rows[0].rowStopped && rows[1].rowStopped && rows[2].rowStopped)
+        else if (!rows[0].rowSpinning && !rows[1].rowSpinning && !rows[2].rowSpinning)
         {
             if (!isFlashing) 
                 StartCoroutine("FlashCashRed");
         }
-        */
     }
 
     

@@ -22,7 +22,7 @@ public class BetMax : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (rows[0].rowStopped && rows[1].rowStopped && rows[2].rowStopped && !menu.menuActive)
+        if (rows[0].rowSpinning && rows[1].rowSpinning && rows[2].rowSpinning && !menu.menuActive)
         {
             if (!isAnimating)
                 StartCoroutine("AnimateButton");

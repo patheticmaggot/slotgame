@@ -7,30 +7,26 @@ public class Rows : MonoBehaviour {
     private int randomValue;
     private float timeInterval;
 
-    public bool rowStopped;
+    public bool rowSpinning;
     public string stoppedSlot;
-    private bool wheelActive;
+    public bool rowActive = false;
 
     void Start()
     {
-        wheelActive = false;
-        rowStopped = true;
+        rowSpinning = false;
         GameControl.HandlePulled += StartRotating;
     }
 
     private void StartRotating()
     {
         stoppedSlot = "";
-        StartCoroutine("Rotate");
+        if (rowActive)
+            StartCoroutine("Rotate");
     }
 
     private IEnumerator Rotate()
     {
-        if (wheelActive)
-        {
-
-        }
-        rowStopped = false;
+        rowSpinning = true;
         timeInterval = 0.025f;
 
         for (int i = 0; i < 30; i++)
@@ -91,7 +87,7 @@ public class Rows : MonoBehaviour {
         else if (transform.position.y == 1.75f)
             stoppedSlot = "Diamond";
 
-        rowStopped = true;
+        rowSpinning = false;
     }
 
     private void OnDestroy()
