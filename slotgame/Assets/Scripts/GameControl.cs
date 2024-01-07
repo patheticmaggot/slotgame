@@ -15,7 +15,7 @@ public class GameControl : MonoBehaviour {
     private Text cashText;
 
     [SerializeField]
-    private Rows[] rows;
+    public Rows[] rows;
 
     [SerializeField]
     private Transform handle;
@@ -31,7 +31,6 @@ public class GameControl : MonoBehaviour {
     private bool resultsChecked = true;
     private bool isFlashing = false;
     private string matchingValue = null;
-    List<int> activeRows = new List<int>();
 
 
     void Start ()
@@ -39,7 +38,6 @@ public class GameControl : MonoBehaviour {
         winText.enabled = false;
         UpdateCashText();
         UpdateWinText();
-        InitializeRows();
     }
 
     void Update() {
@@ -60,44 +58,6 @@ public class GameControl : MonoBehaviour {
                 UpdateCashText();
             }
         }
-    }
-
-    private int RandomWheel()
-    {
-        int random;
-        bool notSame = false;
-        do {
-            bool again = false;
-            random = UnityEngine.Random.Range(1, 8);
-            foreach (int k in activeRows)
-            {
-                if (k == random)
-                {
-                    again = true;
-                    break;
-                }
-            }
-            if (!again)
-            {
-                activeRows.Add(random);
-                notSame = true;
-            }
-        } while (notSame);
-        return random;
-    }
-
-    public int UpdateRow(int oldRow)
-    {
-        int newRow = RandomWheel();
-        activeRows.Remove(oldRow);
-        return newRow;
-    }
-
-    private void InitializeRows()
-    {
-        rows[RandomWheel()].rowActive = true;
-        rows[RandomWheel()].rowActive = true;
-        rows[RandomWheel()].rowActive = true;
     }
 
     private void OnMouseDown()
