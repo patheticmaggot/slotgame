@@ -44,7 +44,7 @@ public class BetOne : MonoBehaviour
 
     private void OnMouseDown()
     {
-        if (rows[0].rowSpinning && rows[1].rowSpinning && rows[2].rowSpinning && !menu.menuActive)
+        if (!rows[0].rowSpinning && !rows[1].rowSpinning && !rows[2].rowSpinning && !menu.menuActive)
         {
             if (!isAnimating)
                 StartCoroutine("AnimateButton");
