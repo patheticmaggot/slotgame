@@ -12,15 +12,19 @@ public class Pay : MonoBehaviour
     [SerializeField]
     private Menu menu;
 
+    [SerializeField]
+    private Sounds sound;
+
     private bool isAnimating = false;
 
 
     private void OnMouseDown()
     {
-        if (!rows[0].rowSpinning && !rows[1].rowSpinning && !rows[2].rowSpinning && !menu.menuActive)
+        if (!rows[0].rowSpinning && !rows[1].rowSpinning && !rows[2].rowSpinning && !menu.menuActive && !isAnimating)
         {
-            if (!isAnimating)
-                StartCoroutine("AnimateButton");
+            StartCoroutine("AnimateButton");
+            sound.ButtonClickSound();
+            menu.ActivateMenu();
         }
     }
 
@@ -35,7 +39,5 @@ public class Pay : MonoBehaviour
         transform.localPosition = new Vector2(transform.localPosition.x, -0.464f);
 
         isAnimating = false;
-        menu.ActivateMenu();
-        
     }
 }

@@ -18,6 +18,9 @@ public class BetMax : MonoBehaviour
     [SerializeField]
     private Menu menu;
 
+    [SerializeField]
+    private Sounds sound;
+
     private bool isAnimating = false;
 
     private void OnMouseDown()
@@ -25,7 +28,10 @@ public class BetMax : MonoBehaviour
         if (!rows[0].rowSpinning && !rows[1].rowSpinning && !rows[2].rowSpinning && !menu.menuActive)
         {
             if (!isAnimating)
+            {
+                sound.ButtonClickSound();
                 StartCoroutine("AnimateButton");
+            }
             betOne.currentBet = 10000;
             betOne.resultMultiplier = 50f;
             betOne.UpdateBetText();

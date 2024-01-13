@@ -20,6 +20,9 @@ public class Menu : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI cashOutText;
 
+    [SerializeField]
+    private Sounds sound;
+
     public bool menuActive;
 
     private float euros = 0;
@@ -27,13 +30,19 @@ public class Menu : MonoBehaviour
 
     void Start()
     {
-        ActivateMenu();
+        menu.SetActive(true);
+        menuActive = true;
         cashOutText.enabled = false;
     }
 
     public void ActivateMenu()
     {
+        sound.PauseMusic();
         cashOutText.text = "You collected\n" + gameControl.currentCash;
+        if (gameControl.currentCash > 0)
+            sound.PayOutWinSound();
+        else
+            sound.PayOutLoseSound();
         menu.SetActive(true);
         menuActive = true;
         Time.timeScale = 0f;
@@ -41,6 +50,8 @@ public class Menu : MonoBehaviour
 
     public void DeActivateMenu()
     {
+        if (!sound.mainThemeAudio.isPlaying)
+            sound.PlayMusic();
         menu.SetActive(false);
         menuActive = false;
         Time.timeScale = 1f;
@@ -61,6 +72,7 @@ public class Menu : MonoBehaviour
             euroInputText.text = string.Empty;
             cashInputText.text = string.Empty;
             cashOutText.enabled = true;
+            sound.InsertMoneySound();
         }
     }
 

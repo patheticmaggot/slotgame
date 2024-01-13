@@ -26,6 +26,9 @@ public class GameControl : MonoBehaviour {
     [SerializeField]
     private GameObject jackpotLights;
 
+    [SerializeField]
+    private Sounds sound;
+
     public int currentCash;
     private int winValue;
     private bool resultsChecked = true;
@@ -37,7 +40,6 @@ public class GameControl : MonoBehaviour {
     {
         winText.enabled = false;
         UpdateCashText();
-        UpdateWinText();
     }
 
     void Update() {
@@ -65,6 +67,7 @@ public class GameControl : MonoBehaviour {
         if (!rows[0].rowSpinning && !rows[1].rowSpinning && !rows[2].rowSpinning && currentCash >= betOne.currentBet)
         {
             StartCoroutine("PullHandle");
+            sound.PullHandleSound();
             PayToSpin();
         }
         else if (!rows[0].rowSpinning && !rows[1].rowSpinning && !rows[2].rowSpinning)
@@ -168,6 +171,7 @@ public class GameControl : MonoBehaviour {
     private void UpdateWinText()
     {
         winText.text = "WIN\n" + winValue;
+        sound.WinSound();
     }
 
     private void CheckResults()

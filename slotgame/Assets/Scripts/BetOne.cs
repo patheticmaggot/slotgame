@@ -19,6 +19,9 @@ public class BetOne : MonoBehaviour
     [SerializeField]
     private Menu menu;
 
+    [SerializeField]
+    private Sounds sound;
+
     public int currentBet = 200;
     public float resultMultiplier = 1;
     private bool isAnimating = false;
@@ -47,7 +50,10 @@ public class BetOne : MonoBehaviour
         if (!rows[0].rowSpinning && !rows[1].rowSpinning && !rows[2].rowSpinning && !menu.menuActive)
         {
             if (!isAnimating)
+            {
                 StartCoroutine("AnimateButton");
+                sound.ButtonClickSound();
+            }
             RaiseBet();
             UpdateResults();
         }
