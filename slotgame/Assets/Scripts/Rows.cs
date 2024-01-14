@@ -6,7 +6,10 @@ using UnityEngine;
 public class Rows : MonoBehaviour {
 
     [SerializeField]
-    private AudioSource[] reelSpinningAudio;
+    private AudioSource clickSound;
+
+    [SerializeField]
+    private AudioSource reelSound;
 
     private int randomValue;
     private float timeInterval;
@@ -31,13 +34,14 @@ public class Rows : MonoBehaviour {
     {
         rowSpinning = true;
         timeInterval = 0.025f;
-        ReelSpinningSoundSpeed(1);
+        reelSound.Play();
 
         for (int i = 0; i < 30; i++)
         {
             if (transform.position.y <= -3.5f)
                 ChangeRows();
             transform.position = new Vector2(transform.position.x, transform.position.y - 0.25f);
+            clickSound.Play();
             yield return new WaitForSeconds(timeInterval);
         }
 
@@ -59,32 +63,22 @@ public class Rows : MonoBehaviour {
                 ChangeRows();
 
             transform.position = new Vector2(transform.position.x, transform.position.y - 0.25f);
+            clickSound.Play();
 
             if (i > Mathf.RoundToInt(randomValue * 0.25f))
-            {
-                ReelSpinningSoundSpeed(2);
+            { 
+                reelSound.Stop();
                 timeInterval = 0.05f;
             }
             if (i > Mathf.RoundToInt(randomValue * 0.5f))
-            {
-                ReelSpinningSoundSpeed(3);
                 timeInterval = 0.1f;
-            }
             if (i > Mathf.RoundToInt(randomValue * 0.75f))
-            {
-                ReelSpinningSoundSpeed(4);
                 timeInterval = 0.15f;
-            }
             if (i > Mathf.RoundToInt(randomValue * 0.95f))
-            {
-                ReelSpinningSoundSpeed(5);
                 timeInterval = 0.2f;
-            }
 
             yield return new WaitForSeconds(timeInterval);
         }
-
-        ReelSpinningSoundSpeed(6);
 
         switch (currentRow)
         {
@@ -405,35 +399,6 @@ public class Rows : MonoBehaviour {
             default:
                 Debug.LogError("no rows chosen");
                 return transform.position.x;
-        }
-    }
-
-    public void ReelSpinningSoundSpeed(int speed)
-    {
-        switch (speed)
-        {
-            case 1:
-                reelSpinningAudio[0].Play();
-                break;
-            case 2:
-                reelSpinningAudio[0].Stop();
-                reelSpinningAudio[3].Play();
-                break;
-            case 3:
-                //reelSpinningAudio[1].Stop();
-                //reelSpinningAudio[2].Play();
-                break;
-            case 4:
-                reelSpinningAudio[3].Stop();
-                reelSpinningAudio[4].Play();
-                break;
-            case 5:
-                //reelSpinningAudio[3].Stop();
-                //reelSpinningAudio[4].Play();
-                break;
-            case 6:
-                reelSpinningAudio[4].Stop();
-                break;
         }
     }
 
