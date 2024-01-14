@@ -41,7 +41,6 @@ public class Rows : MonoBehaviour {
             if (transform.position.y <= -3.5f)
                 ChangeRows();
             transform.position = new Vector2(transform.position.x, transform.position.y - 0.25f);
-            clickSound.Play();
             yield return new WaitForSeconds(timeInterval);
         }
 
@@ -63,17 +62,20 @@ public class Rows : MonoBehaviour {
                 ChangeRows();
 
             transform.position = new Vector2(transform.position.x, transform.position.y - 0.25f);
-            clickSound.Play();
-
+            
             if (i > Mathf.RoundToInt(randomValue * 0.25f))
-            { 
-                reelSound.Stop();
+            {
+                reelSound.volume = 0.3f;
+                clickSound.Play();
                 timeInterval = 0.05f;
             }
             if (i > Mathf.RoundToInt(randomValue * 0.5f))
                 timeInterval = 0.1f;
             if (i > Mathf.RoundToInt(randomValue * 0.75f))
+            {
+                reelSound.Stop();
                 timeInterval = 0.15f;
+            }
             if (i > Mathf.RoundToInt(randomValue * 0.95f))
                 timeInterval = 0.2f;
 
